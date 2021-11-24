@@ -3,8 +3,20 @@ rule cp
   command = cp $i $out
 rule touch
  command = touch $out
+o placeholder.cmi : cp ../bs/components/placeholder.cmi
+o placeholder.cmj : cp ../bs/components/placeholder.cmj
+o placeholder.cmt : cp ../bs/components/placeholder.cmt
+o placeholder.res : cp ../../components/placeholder.res
+o Next.cmi : cp ../bs/bindings/Next.cmi
+o Next.cmj : cp ../bs/bindings/Next.cmj
+o Next.cmt : cp ../bs/bindings/Next.cmt
+o Next.res : cp ../../bindings/Next.res
+o about.cmi : cp ../bs/pages/about.cmi
+o about.cmj : cp ../bs/pages/about.cmj
+o about.cmt : cp ../bs/pages/about.cmt
+o about.res : cp ../../pages/about.res
 o index.cmi : cp ../bs/pages/index.cmi
 o index.cmj : cp ../bs/pages/index.cmj
 o index.cmt : cp ../bs/pages/index.cmt
 o index.res : cp ../../pages/index.res
-build install.stamp : touch index.cmi index.cmj 
+build install.stamp : touch placeholder.cmi placeholder.cmj Next.cmi Next.cmj about.cmi about.cmj index.cmi index.cmj 

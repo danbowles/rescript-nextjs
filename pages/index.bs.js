@@ -3,7 +3,7 @@
 import * as React from "react";
 
 function Index$default(Props) {
-  return React.createElement("div", undefined, "hello world and stuff yay");
+  return React.createElement("h1", undefined, "hello world and stuff yay");
 }
 
 var $$default = Index$default;

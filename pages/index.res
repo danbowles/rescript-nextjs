@@ -1,4 +1,4 @@
 @react.component
 let default = () => {
-  <div>{React.string("hello world and stuff yay")}</div>
+  <h1>{React.string("hello world and stuff yay")}</h1>
 }

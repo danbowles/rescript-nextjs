@@ -5,6 +5,10 @@ B /home/dan/rescript-nextjs/node_modules/rescript/lib/ocaml
 FLG -w +a-4-9-20-40-41-42-50-61-102
 S /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml
 B /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml
+S components
+B lib/bs/components
+S bindings
+B lib/bs/bindings
 S pages
 B lib/bs/pages
 ####BSB GENERATED: NO EDIT}

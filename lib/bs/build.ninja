@@ -2,13 +2,22 @@ rescript = 1
 g_finger := /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml/install.stamp
 rule astj
   command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsc.exe  -bs-v 9.1.4 -bs-jsx 3  -absname -bs-ast -o $out $i
-o pages/index.ast : astj ../../pages/index.res
+o components/placeholder.ast : astj ../../components/placeholder.res
 rule deps
-  command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsb_helper.exe -hash 4ab6c143a124410a01b8ad3716f12a29 $in
+  command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsb_helper.exe -hash 8d080a3f17e940bff1637e30801ab723 $in
   restat = 1
-o pages/index.d : deps pages/index.ast
+o components/placeholder.d : deps components/placeholder.ast
 rule mij
   command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsc.exe -I pages/api -I pages -I bindings -I components -I /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml   -bs-package-name rescript-nextjs -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
   dyndep = 1
   restat = 1
+o components/placeholder.cmj components/placeholder.cmi ../../components/placeholder.bs.js : mij components/placeholder.ast
+o bindings/Next.ast : astj ../../bindings/Next.res
+o bindings/Next.d : deps bindings/Next.ast
+o bindings/Next.cmj bindings/Next.cmi ../../bindings/Next.bs.js : mij bindings/Next.ast
+o pages/about.ast : astj ../../pages/about.res
+o pages/about.d : deps pages/about.ast
+o pages/about.cmj pages/about.cmi ../../pages/about.bs.js : mij pages/about.ast
+o pages/index.ast : astj ../../pages/index.res
+o pages/index.d : deps pages/index.ast
 o pages/index.cmj pages/index.cmi ../../pages/index.bs.js : mij pages/index.ast
