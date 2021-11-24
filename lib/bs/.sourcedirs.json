@@ -1,0 +1,1 @@
+{ "dirs" : [ "components" , "bindings" , "pages" , "pages/api" ] , "pkgs" : [ [ "@rescript/react" , "/home/dan/rescript-nextjs/node_modules/@rescript/react" ] ] , "generated" : [] }

@@ -5,15 +5,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "re:build": "rescript build",
+    "re:start": "rescript build -w"
   },
   "dependencies": {
+    "@rescript/react": "^0.10.3",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "bs-platform": "^9.0.2",
     "eslint": "7",
-    "eslint-config-next": "12.0.4"
+    "eslint-config-next": "12.0.4",
+    "rescript": "^9.1.4"
   }
 }

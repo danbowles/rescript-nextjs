@@ -1,0 +1,14 @@
+rescript = 1
+g_finger := /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsc.exe  -bs-v 9.1.4 -bs-jsx 3  -absname -bs-ast -o $out $i
+o pages/index.ast : astj ../../pages/index.res
+rule deps
+  command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsb_helper.exe -hash 4ab6c143a124410a01b8ad3716f12a29 $in
+  restat = 1
+o pages/index.d : deps pages/index.ast
+rule mij
+  command = /home/dan/rescript-nextjs/node_modules/rescript/linux/bsc.exe -I pages/api -I pages -I bindings -I components -I /home/dan/rescript-nextjs/node_modules/@rescript/react/lib/ocaml   -bs-package-name rescript-nextjs -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o pages/index.cmj pages/index.cmi ../../pages/index.bs.js : mij pages/index.ast

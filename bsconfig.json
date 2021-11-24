@@ -1,0 +1,26 @@
+{
+  "name": "rescript-nextjs",
+  "sources": [
+    {
+      "dir": "pages",
+      "subdirs": true
+    },
+    {
+      "dir": "bindings",
+      "subdirs": true
+    },
+    {
+      "dir": "components",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "reason": { "react-jsx": 3 },
+  "bs-dependencies": ["@rescript/react"]
+}
